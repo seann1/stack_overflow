@@ -5,5 +5,5 @@
 <br />
 
 <% if current_user != nil %>
-  <%= link_to 'Have a question?', new_question_path(current_user) %>
+  <%= link_to 'Have a question?', new_question_path(current_user), id: 'new_link',  remote: true %>
 <% end %>

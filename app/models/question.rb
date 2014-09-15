@@ -8,6 +8,6 @@ class Question < ActiveRecord::Base
   validates_length_of :description, maximum: 1200
 
   belongs_to :user
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
 end

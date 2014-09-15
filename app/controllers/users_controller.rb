@@ -13,6 +13,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(users_params)
+    flash[:notice] = "Your user has been updated"
+    redirect_to root_path
+    else
+      redirect_to edit_user_path(@user)
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "Your user has been deleted"
+    redirect_to root_path
+  end
+
 private
 
   def users_params
