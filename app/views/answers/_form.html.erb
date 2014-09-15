@@ -1,9 +1,9 @@
-<%= form_for @question do |f| %>
-  <% if @question.errors.any? %>
+<%= form_for [@question, @answer] do |f| %>
+  <% if @answer.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
-        <% @question.errors.full_messages.each do |message| %>
+        <% @answer.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -11,13 +11,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
-  <div class="actions"><%= f.submit "Add Question" %></div>
+    <%= f.hidden_field :question_id, value: @question.id %>
+  <div class="actions"><%= f.submit "Add Answer" %></div>
 <% end %>
