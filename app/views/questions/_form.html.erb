@@ -10,14 +10,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field row">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "small-2 columns" %>
   </div>
-  <div class="field">
+  <div class="field row">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "small-2 columns" %>
   </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "Add Question", class: 'button' %>
+    <%= f.submit "Add Question", class: "button" %>
 <% end %>

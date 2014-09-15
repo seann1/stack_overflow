@@ -10,11 +10,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br />
+  <div class="row">
     <%= f.text_field :description %>
   </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :question_id, value: @question.id %>
-  <div class="button"><%= f.submit "Add" %></div>
+  <%= f.submit "Add", class: 'button' %>
 <% end %>
