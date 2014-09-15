@@ -1,0 +1,10 @@
+<% @questions.each do |q| %>
+  <p><%= q.title %>
+<% end %>
+
+<br />
+<br />
+
+<% if current_user != nil %>
+  <%= link_to 'Have a question?', new_question_path(current_user) %>
+<% end %>
