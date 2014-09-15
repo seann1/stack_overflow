@@ -4,7 +4,7 @@
       <h2>Form is invalid</h2>
       <ul>
         <% @question.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li class='error'><%= message %></li>
         <% end %>
       </ul>
     </div>
@@ -19,5 +19,5 @@
     <%= f.text_field :description %>
   </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
-  <div class="actions"><%= f.submit "Add Question" %></div>
+  <%= f.submit "Add Question", class: 'button' %>
 <% end %>

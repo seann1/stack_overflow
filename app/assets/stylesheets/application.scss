@@ -4,6 +4,19 @@ body {
   font-weight: 300;
 }
 
+.error {
+  color: red;
+}
+
+.description {
+  background: #D3D3D3;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.8em;
+
+
+}
+
 /*= require foundation */
 
 @import "foundation_and_overrides";

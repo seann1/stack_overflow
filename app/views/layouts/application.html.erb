@@ -7,23 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if request.url != root_url %>
-  <%= link_to "Home", root_url %> |
-<% end %>
 
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log Out", logout_path %> |
-  <% else %>
-    <%= link_to "Sign Up", signup_path %> |
-    <%= link_to "Log In", login_path %>
-  <% end %>
+  <nav class="top-bar" data-topbar role="navigation">
 
-  <% if current_user != nil %>
-    <%= link_to 'Edit User', edit_user_path(current_user) %> | <%= link_to "Delete User", user_path(current_user),
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Stack Overflow</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <% if request.url != root_url %>
+    <li class="active"><%= link_to "Home", root_url %></li>
+    <% end %>
+    <% if current_user %>
+      <li class="has-dropdown">
+        <a href="#"><%= current_user.email %></a>
+        <ul class="dropdown">
+          <li><%= link_to "Log Out", logout_path %></li>
+          <li><%= link_to 'Edit User', edit_user_path(current_user) %></li>
+          <li><%= link_to "Delete User", user_path(current_user),
                                               :data => {:confirm => "Are you sure?",
-                                              :method => "delete"} %></div>
-  <% end %>
+                                              :method => "delete"} %></li>
+    <% else %>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+        </ul>
+    <% end %>
+    </ul>
+</section>
+</nav>
+
   <br />
   <br />
   <br />
