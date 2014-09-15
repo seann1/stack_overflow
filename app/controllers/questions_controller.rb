@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-
   end
 
   def create
@@ -16,7 +15,6 @@ class QuestionsController < ApplicationController
         format.html {redirect_to root_url}
         format.js
       end
-      redirect_to root_url, notice: "Thanks for sharing!"
     else
       render 'new'
     end

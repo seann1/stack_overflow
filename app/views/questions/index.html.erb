@@ -1,9 +1,12 @@
 <% @questions.each do |q| %>
   <h3><%= link_to "#{q.title}", question_path(q.id) %></h3>
 <% end %>
+  <div id="questions">
+  </div>
 
 <br />
-
+<div id="forms">
 <% if current_user != nil %>
-  <%= link_to 'Have a question?', new_question_path(current_user), id: 'new_link',  remote: true %>
+  <%= link_to 'Have a question?', new_question_path, id: 'new_link',  remote: true %>
 <% end %>
+</div>
