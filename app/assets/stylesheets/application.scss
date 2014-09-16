@@ -13,6 +13,10 @@ body {
   padding: 5px;
   text-align: center;
   font-size: 0.8em;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #C2C2C2;
 }
 
 .question_list {
@@ -32,6 +36,14 @@ body {
   border-width: 1px;
   border-style: solid;
   border-color: #C2C2C2;
+}
+
+.title {
+  left: -160px;
+}
+.buttons {
+  left: -40px;
+  width: 100px;
 }
 
 .large-10{
