@@ -1,4 +1,6 @@
-<p id="answer_<%= answer.id %>"><%= answer.description %>
+<p id="answer_<%= answer.id %>">
+  <%= image_tag('checkmark.png', size: "16x10") if answer.user_choice %>
+  <%= answer.description %>
 
   <% if current_user != nil %>
     <% if answer.user_id == current_user.id %>
