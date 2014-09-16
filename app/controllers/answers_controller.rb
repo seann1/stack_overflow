@@ -12,7 +12,10 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.create(answers_params)
     if @answer.valid?
-      redirect_to root_url, notice: "Thanks for sharing!"
+      respond_to do |format|
+        format.html {redirect_to root_url}
+        format.js
+      end
     else
       render 'new'
     end

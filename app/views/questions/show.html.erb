@@ -23,7 +23,7 @@
 <% if current_user == nil %>
   <p>Log in to answer.</p>
 <% elsif current_user.id != @question.user_id %>
-  <%= link_to 'Answer Question', new_question_answer_path(@question) %>
+<%= link_to 'Answer Question', new_question_answer_path(@question), id: "answer_link", remote: true %>
 <% end %>
 
 
