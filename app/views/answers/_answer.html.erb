@@ -4,8 +4,9 @@
   <% if answer.user_choice %>
   <div class="chosen row">
     <div class="large-2 columns">
-    <%= link_to "Upvote", question_answer_votes_path(:question_id => answer.question_id, :answer_id => answer.id),class: "marker default radius label", method: :post %></div><div class="large-10 columns"><%= image_tag('checkmark.png', size: "16x10") %><%= answer.description %>
+    <%= link_to "Upvote", question_answer_votes_path(:question_id => answer.question_id, :answer_id => answer.id),class: "marker default radius label", method: :post %></div><div class="large-9 columns"><%= image_tag('checkmark.png', size: "16x10") %><%= answer.description %>
     </div>
+    <div class="large-1 columns"> <%= answer.votes.count %> </div>
   </div>
   <% else %>
   <div class="row">
@@ -18,8 +19,8 @@
     <%= link_to "Mark as Best", question_answer_path({:question_id => answer.question_id, :id => answer.id}), class: "marker success radius label", :method => :patch %></div>
     <% end %>
     <% end %>
-    <div class="large-10 columns">  <%= answer.description %> </div>
-
+    <div class="large-9 columns">  <%= answer.description %> </div>
+    <div class="large-1 columns"> <%= answer.votes.count %> </div>
   </div>
   <% end %>
     <hr>
