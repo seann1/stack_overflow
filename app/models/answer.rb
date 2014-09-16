@@ -9,4 +9,8 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 
+  def choice
+    self.update(:user_choice => true)
+  end
+
 end

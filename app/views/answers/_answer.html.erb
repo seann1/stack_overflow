@@ -1,1 +1,15 @@
-<h3><%= link_to @answer.title, question_answer_path({:question_id => @answer.question_id, :id => @answer.id}) %></h3>
+<p id="answer_<%= answer.id %>"><%= answer.description %>
+
+  <% if current_user != nil %>
+    <% if answer.user_id == current_user.id %>
+      <%= link_to "Delete", question_answer_path({:question_id => answer.question_id, :id => answer.id}),
+                        :data => {:confirm => "You sure?",
+                        :method => "delete"}, remote: true %></p>
+    <% end %>
+
+    <% if answer.question.user_id == current_user.id %>
+      <%= link_to "Mark as Best", question_answer_path({:question_id => answer.question_id, :id => answer.id}), class: "marker", :method => :patch %>
+    <% end %>
+  <% end %>
+
+

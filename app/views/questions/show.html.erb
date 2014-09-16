@@ -4,20 +4,11 @@
 <p class='description'><%= @question.description %></p>
 </div>
   </div>
-<% @answers.each do |a| %>
-      <p><%= a.description %>
-    </div>
-  </div>
-  <% if current_user != nil %>
-  <% if a.user_id == current_user.id %>
-    <%= link_to "Delete", question_answer_path({:question_id => a.question_id, :id => a.id}),
-                        :data => {:confirm => "You sure?",
-                        :method => "delete"} %>
-  <% end %>
-<% end %>
-</p>
 
-<% end %>
+<div id="answers">
+  <%= render @answers %>
+</div>
+
 
 
 <% if current_user == nil %>

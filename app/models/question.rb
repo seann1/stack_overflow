@@ -10,4 +10,18 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers, dependent: :destroy
 
+  def self.sort_by_choice(input)
+    @true = []
+    @false = []
+
+    input.each do |x|
+      if x.user_choice
+        @true << x
+      else
+        @false << x
+      end
+    end
+   @sorted_answers =  @true + @false
+  end
+
 end
