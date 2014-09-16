@@ -8,8 +8,13 @@ class Answer < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :question
+  has_many :votes
 
   def choice
+    users_answers = Answer.where(:question_id => self.question_id)
+    users_answers.flatten.each do |answer|
+      answer.update(:user_choice => false)
+    end
     self.update(:user_choice => true)
   end
 
