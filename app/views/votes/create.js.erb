@@ -1,0 +1,2 @@
+$('#upvote_<%= @answer.id %>').replaceWith("<p class='default radius label'>voted  </p>");
+$('#votes_<%= @answer.id %>').replaceWith("<p><%= @answer.votes.count %><p>");
