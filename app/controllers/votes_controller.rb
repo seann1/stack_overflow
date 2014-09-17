@@ -14,9 +14,15 @@ class VotesController < ApplicationController
     @user = User.find(current_user)
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
+    @vote_count = @answer.votes.count
     @vote = @user.votes.create(votes_params)
+    if @vote_count < @answer.votes.count
       flash[:notice] = "Your vote has been added"
       redirect_to question_path(@question)
+    else
+     flash[:notice] = "You have already voted on this"
+     redirect_to question_path(@question)
+    end
   end
 
   private
