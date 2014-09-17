@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :searches
   resources :users
   resources :sessions
 end
