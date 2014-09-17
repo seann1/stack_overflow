@@ -8,10 +8,13 @@ body {
   color: red;
 }
 
+.right {
+  float: right;
+}
+
 .description {
   background: #D3D3D3;
   padding: 5px;
-  text-align: center;
   font-size: 0.8em;
   border-radius: 3px;
   border-width: 1px;
@@ -46,7 +49,14 @@ body {
   width: 100px;
 }
 
+.large-1 {
+  text-align: left;
+}
 .large-9{
+  text-align: left;
+}
+
+.large-8{
   text-align: left;
 }
 
