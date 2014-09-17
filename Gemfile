@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt'
 gem 'foundation-rails'
+gem 'textacular'
 
 group :development do
   gem 'better_errors'

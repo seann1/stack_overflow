@@ -15,10 +15,21 @@
       <h1><a href="/">Stack Overflow</a></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+
   </ul>
 
   <section class="top-bar-section">
     <ul class="right">
+      <li class="has-form">
+      <div class="row collapse">
+        <div class="large-8 small-9 columns">
+          <input name= "search_query" type="text" placeholder="Find Stuff">
+        </div>
+      <div class="large-4 small-3 columns">
+        <a href="#" class="alert button expand">Search</a>
+      </div>
+    </div>
+    </li>
       <% if request.url != root_url %>
     <% end %>
     <% if current_user %>
