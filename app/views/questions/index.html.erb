@@ -1,5 +1,7 @@
+<% if current_user == nil %>
 <p>log in with test@test.com</p>
 <p>Password: password </p>
+<% end %>
 <% @questions.each do |q| %>
 <div class="row">
   <h4 class="question_list small-3 small-centered columns"><%= link_to "#{q.title}", question_path(q.id) %></h4>
