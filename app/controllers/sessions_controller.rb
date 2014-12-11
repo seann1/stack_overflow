@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url, notice: "Logged in!"
     else
-      flash.now[:notice] = "Login failed"
+      flash.now[:alert] = "Login failed"
       render "new"
     end
   end

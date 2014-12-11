@@ -1,4 +1,6 @@
-<h1>Edit <%= current_user.email %></h1>
+<div class="row">
+  <h1>Edit <%= current_user.email %></h1>
+</div>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -17,12 +19,18 @@
     <%= f.text_field :email %>
   </div>
   <div class="row">
-    <%= f.label :password %><br />
+    <%= f.label :new_password %><br />
     <%= f.password_field :password %>
   </div>
   <div class="row">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit "Edit" %></div>
+  <div class="row">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="row">
+  <div class="actions"><%= f.submit "Edit", class: "button" %></div>
+  </div>
 <% end %>
