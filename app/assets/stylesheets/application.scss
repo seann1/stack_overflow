@@ -48,6 +48,11 @@ body {
   border-width: 1px;
 }
 
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /*= require foundation */
 
 @import "foundation_and_overrides";

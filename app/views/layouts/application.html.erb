@@ -52,10 +52,14 @@
 </section>
 </nav>
 
-  <br />
-  <%= flash[:notice] %>
+  <div class="container">
 
-<%= yield %>
+    <br />
+    <%= flash[:notice] %>
 
+    <%= yield %>
+  </div>
+</div>
+</div>
 </body>
 </html>
