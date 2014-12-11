@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'bcrypt'
 gem 'foundation-rails'
 gem 'textacular'
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem 'better_errors'
