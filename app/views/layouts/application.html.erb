@@ -22,6 +22,7 @@
     <ul class="right">
       <% if current_user != nil %>
       <li class="username"> <%= current_user.username %></li>
+      <li><%= image_tag current_user.avatar.url(:thumb) %></li>
       </div>
       <% end %>
       <li class="has-form">

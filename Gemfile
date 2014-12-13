@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'foundation-rails'
 gem 'textacular'
 gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
 
 group :development do
   gem 'better_errors'

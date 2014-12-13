@@ -80,4 +80,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.assets.precompile += %w( vendor/modernizr.js )
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['sean-stack'],
+    :access_key_id => ENV['AKIAIVKJ2HXS52VF7WXQ'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
