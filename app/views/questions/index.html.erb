@@ -1,6 +1,8 @@
 <% if current_user == nil %>
+<div class="row">
 <p>log in with test@test.com</p>
 <p>Password: password </p>
+</row>
 <% end %>
 <% @questions.each do |q| %>
 <div class="row">
@@ -12,7 +14,9 @@
 
 <br />
 <div id="forms">
+  <div class="row">
 <% if current_user != nil %>
-  <%= link_to 'New Question', new_question_path, id: 'new_link',  remote: true %>
+  <%= link_to 'New Question', new_question_path, id: 'new_link', class: "button", remote: true %>
 <% end %>
+</div>
 </div>

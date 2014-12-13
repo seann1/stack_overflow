@@ -33,11 +33,8 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update(questions_params)
-      respond_to do |format|
-        format.html {redirect_to root_url}
-        format.js
-      end
-    flash[:notice] = "Your question has been updated"
+      redirect_to root_url
+      flash[:notice] = "Your question has been updated"
     else
       redirect_to edit_question_path(@question)
     end
