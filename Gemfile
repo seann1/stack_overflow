@@ -12,6 +12,8 @@ gem 'foundation-rails'
 gem 'textacular'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem "chronic", "0.10.2"
+gem "devise"
 
 group :development do
   gem 'better_errors'
