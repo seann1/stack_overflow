@@ -36,10 +36,12 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
-  config.paperclip_defaults = {
+config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => 'sean-stack'
+    :bucket => ENV['sean-stack'],
+    :access_key_id => ENV['AKIAIVKJ2HXS52VF7WXQ'],
+    :secret_access_key => ENV['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']
   }
 }
 end
