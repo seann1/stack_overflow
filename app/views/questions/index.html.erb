@@ -1,22 +1,22 @@
 <% if current_user == nil %>
 <div class="row">
-<p>log in with test@test.com</p>
-<p>Password: password </p>
-</row>
+  <p>log in with test@test.com</p>
+  <p>Password: password </p>
+</div>
 <% end %>
-<% @questions.each do |q| %>
-<div class="row">
-  <div class="question-container medium-10 columns">
-    <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
-  </div>
-  <div class="answer-count medium-2 columns">
-    <p class="answer-count-text"><%= q.answers.count %> answers</p>
-  </div>
 
-</row>
-<% end %>
-  <div id="questions">
+
+<% @questions.each do |q| %>
+  <div class="row">
+    <div class="question-container medium-10 columns">
+      <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
+    </div>
+    <div class="answer-count medium-2 columns">
+      <p class="answer-count-text"><%= q.answers.count %> answers</p>
+    </div>
   </div>
+<% end %>
+
 
 <br />
 <div id="forms">
