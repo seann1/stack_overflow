@@ -8,6 +8,10 @@ body {
   font-weight: 300;
 }
 
+.hidden {
+  display: none;
+}
+
 .error {
   color: red;
 }
@@ -27,11 +31,20 @@ body {
 }
 
 .question_list {
+  padding: 10px;
   background-color: #D4D4D4;
+  color: black;
 }
 
 .question_list:hover {
   background-color: #C2C2C2;
+}
+
+.answer-count {
+  background-color: black;
+  .answer-count-text {
+    color: white;
+  }
 }
 
 .chosen {
@@ -84,4 +97,8 @@ body {
 
 .center {
   text-align: center;
+}
+
+.hidden {
+  display: hidden;
 }

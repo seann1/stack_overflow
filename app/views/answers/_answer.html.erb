@@ -1,9 +1,7 @@
 
-<% if answer.votes.where(:user_id => current_user) != nil
-    @voted = "Voted"
-   else
-    @voted = "Upvote"
-   end%>
+
+   <% @voted = "Upvote" %>
+
 
 <p id="answer_<%= answer.id %>">
   <% if answer.user_choice %>
@@ -20,7 +18,12 @@
   <!-- not chosen answer -->
   <div class="row" id="answer_row_<%= answer.id %>">
 
+<% if answer.votes.where(:user_id => current_user) != nil %>
+  <div class="large-1 columns"><%= link_to @voted, question_answer_votes_path({:question_id => answer.question_id, :answer_id => answer.id}), class: "hidden", id: "upvote_" + answer.id.to_s, method: :post, remote: true %></div>
+  <% else %>
+
   <div class="large-1 columns"><%= link_to @voted, question_answer_votes_path({:question_id => answer.question_id, :answer_id => answer.id}), class: "marker default radius label", id: "upvote_" + answer.id.to_s, method: :post, remote: true %></div>
+  <% end %>
 
   <div class="large-1 columns mark">
   <% if current_user != nil %>
