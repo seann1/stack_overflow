@@ -1,1 +1,22 @@
-<%= @user.name %>
+<%= @user.username %>
+
+<%= image_tag current_user.avatar.url(:medium), class: "nav-profile" %>
+
+<h4>Questions asked: <%= @user.questions.count %></h4>
+
+<% topQuestions = [] %>
+
+<% @user.questions.each do |q| %>
+  <% answerCount = q.answers.count %>
+  <% current_q = Questioncount.new(q.id, answerCount) %>
+  <% topQuestions << current_q %>
+<% end %>
+
+<% sortedQuestions = topQuestions.sort! { |a,b| a.aCount <=> b.aCount } %>
+
+<% sortedQuestions.each do |q| %>
+  <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
+<% end %>
+
+<h4>Answers: <%= @user.answers.count %></h4>
+

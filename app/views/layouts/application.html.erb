@@ -21,7 +21,7 @@
   <section class="top-bar-section">
     <ul class="right">
       <% if current_user != nil %>
-      <li class="username"> <%= current_user.username %></li>
+      <li class="username"> <%= link_to current_user.username, user_path(current_user) %></li>
       <li><%= image_tag current_user.avatar.url(:thumb), class: "nav-thumb" %></li>
       </div>
       <% end %>
