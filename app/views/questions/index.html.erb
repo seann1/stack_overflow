@@ -15,8 +15,9 @@
       <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
     </div>
     <div class="answer-count medium-2 columns">
-      <p class="answer-count-text">Asked by: <%=q.user.username %></p>
-      <p class="answer-count-text"><%= q.answers.count %> answers</p>
+      <p class="answer-count-text">Asked on <%= q.created_at.to_s[5..9] %>-<%= q.created_at.to_s[0..3] %></p>
+      <p class="answer-count-text"><%= link_to "By: #{q.user.username}", user_path(q.user_id) %></p>
+      <p class="answer-count-text"><%= link_to  "#{q.answers.count} answers", question_path(q.id) %></p>
     </div>
   </div>
 <% end %>
