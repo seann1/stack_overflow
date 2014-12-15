@@ -95,13 +95,11 @@ body {
 }
 
 .username {
-  padding: 10px;
   color: white;
 }
 
 .nav-thumb {
   height: 35px;
-  margin-top: 5px;
 }
 
 .center {
@@ -110,4 +108,10 @@ body {
 
 .hidden {
   display: hidden;
+}
+
+.user-list {
+  position: relative;
+  float: left;
+  margin: 5px;
 }
