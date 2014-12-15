@@ -1,27 +1,29 @@
 <% usersArray = User.all.sample(5) %>
 
-<div class="row">
-  <div class="medium-4 columns">
-    <div class="row">
-      <div class="user-list">
-        <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-      </div>
-      <div class="user-list">
-        <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-      </div>
-      <div class="user-list">
-        <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-      </div>
-      <div class="user-list">
-        <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-      </div>
-      <div class="user-list">
-        <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-      </div>
+<% if usersArray.length > 4 %>
+  <div class="row">
+    <div class="medium-4 columns">
+      <div class="row">
+        <div class="user-list">
+          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
+        </div>
+        <div class="user-list">
+          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
+        </div>
+        <div class="user-list">
+          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
+        </div>
+        <div class="user-list">
+          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
+        </div>
+        <div class="user-list">
+          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
     <% if current_user == nil %>
     <div class="row">
