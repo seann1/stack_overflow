@@ -8,14 +8,14 @@
 
 <% @user.questions.each do |q| %>
   <% answerCount = q.answers.count %>
-  <% current_q = Questioncount.new(q.id, answerCount) %>
+  <% current_q = [q.id, answerCount] %>
   <% topQuestions << current_q %>
 <% end %>
 
-<% sortedQuestions = topQuestions.sort! { |a,b| a.aCount <=> b.aCount } %>
+<% sortedQuestions = topQuestions.sort! { |a,b| a[1] <=> b[1] } %>
 
 <% sortedQuestions.each do |q| %>
-  <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
+  <h4 class="question_list"><%= link_to Question.find_by_id(q[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
 <% end %>
 
 <h4>Answers: <%= @user.answers.count %></h4>
