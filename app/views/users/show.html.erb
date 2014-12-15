@@ -14,8 +14,19 @@
 
 <% sortedQuestions = topQuestions.sort! { |a,b| a[1] <=> b[1] } %>
 
+<h4>Top Questions</h4>
+
 <% sortedQuestions.each do |q| %>
-  <h4 class="question_list"><%= link_to Question.find_by_id(q[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
+<div class="row">
+  <h4 class="question_list medium-10 columns"><%= link_to Question.find_by_id(q[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
+  <div class="answer-count medium-2 columns">
+    <% if q[1] < 2 %>
+      <p class="answer-count-text"><%= link_to "#{q[1]} Answer", question_path(q[0]) %></p>
+    <% else %>
+      <p class="answer-count-text"><%= link_to "#{q[1]} Answers", question_path(q[0]) %></p>
+    <% end %>
+  </div>
+</div>
 <% end %>
 
 <h4>Answers: <%= @user.answers.count %></h4>
