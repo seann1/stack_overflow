@@ -42,14 +42,16 @@ body {
 
 .answer-count {
   background-color: black;
+  position: relative;
+  top: 3px;
   .answer-count-text {
     color: white;
     font-size: .7em;
     line-height: 10%;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 
   }
 }

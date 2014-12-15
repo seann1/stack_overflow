@@ -1,33 +1,39 @@
-<% if current_user == nil %>
 <div class="row">
-  <p>log in with test@test.com</p>
-  <p>Password: password </p>
-</div>
-<% end %>
 
-<div class="row">
-<h2><%= @questions.count %> Questions</h2>
-</div>
+    <% if current_user == nil %>
+    <div class="row">
+      <p>log in with test@test.com</p>
+      <p>Password: password </p>
+    </div>
+    <% end %>
 
-<% @questions.each do |q| %>
-  <div class="row">
-    <div class="question-container medium-10 columns">
-      <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
+    <div class="row">
+    <h2><%= @questions.count %> Questions</h2>
     </div>
-    <div class="answer-count medium-2 columns">
-      <p class="answer-count-text">Asked on <%= q.created_at.to_s[5..9] %>-<%= q.created_at.to_s[0..3] %></p>
-      <p class="answer-count-text">By: <%= link_to "#{q.user.username}", user_path(q.user_id) %></p>
-      <p class="answer-count-text"><%= link_to  "#{q.answers.count} answers", question_path(q.id) %></p>
-    </div>
+
+    <% @questions.each do |q| %>
+      <div class="row">
+        <div class="question-container medium-10 columns">
+          <h4 class="question_list"><%= link_to "#{q.title}", question_path(q.id) %></h4>
+        </div>
+        <div class="answer-count medium-2 columns">
+          <p class="answer-count-text">Asked on <%= q.created_at.to_s[5..9] %>-<%= q.created_at.to_s[0..3] %></p>
+          <p class="answer-count-text">By: <%= link_to "#{q.user.username}", user_path(q.user_id) %></p>
+          <p class="answer-count-text"><%= link_to  "#{q.answers.count} answers", question_path(q.id) %></p>
+        </div>
+      </div>
+    <% end %>
+
+
+    <br />
+      <div id="forms">
+        <div class="row">
+          <% if current_user != nil %>
+            <%= link_to 'New Question', new_question_path, id: 'new_link', class: "button", remote: true %>
+          <% end %>
+        </div>
+      </div>
   </div>
-<% end %>
+</div>
 
 
-<br />
-<div id="forms">
-  <div class="row">
-<% if current_user != nil %>
-  <%= link_to 'New Question', new_question_path, id: 'new_link', class: "button", remote: true %>
-<% end %>
-</div>
-</div>
