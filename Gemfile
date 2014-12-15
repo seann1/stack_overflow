@@ -14,7 +14,7 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 gem "chronic", "0.10.2"
 gem "devise"
-gem 's3_direct_upload'
+# gem 's3_direct_upload'
 
 group :development do
   gem 'better_errors'
