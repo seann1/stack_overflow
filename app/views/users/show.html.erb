@@ -1,6 +1,14 @@
-<%= @user.username %>
+<div class="row">
+  <div class="medium-4 medium-offset-8 columns">
+    <h3><%= @user.username %></h3>
+  </div>
+</div>
 
+<div class="row">
+  <div class="medium-4 medium-offset-8 columns">
 <%= image_tag current_user.avatar.url(:medium), class: "nav-profile" %>
+  </div>
+</div>
 
 <h4>Questions asked: <%= @user.questions.count %></h4>
 
