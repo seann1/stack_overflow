@@ -14,6 +14,9 @@
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.website == nil %>
     <%= link_to "Add a website", edit_user_path(@user) %>
+    <% else %>
+    <%= link_to @user.website, @user.website, target: "_blank" %>
+    <% end %>
   </div>
 </div>
 
