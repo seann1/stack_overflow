@@ -10,6 +10,13 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="medium-4 medium-offset-8 columns">
+    <% if @user.website == nil %>
+    <%= link_to "Add a website", edit_user_path(@user) %>
+  </div>
+</div>
+
 <h4>Questions asked: <%= @user.questions.count %></h4>
 
 <% topQuestions = [] %>

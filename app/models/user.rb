@@ -19,5 +19,7 @@ class User < ActiveRecord::Base
                :default_url => "http://sean-stack.s3.amazonaws.com/missing.png",
                :bucket => ENV['AWS_BUCKET']
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates :website, :url => true
+
 
 end
