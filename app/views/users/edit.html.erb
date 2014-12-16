@@ -20,7 +20,11 @@
   </div>
   <div class="row">
     <%= f.label :website %><br />
-    <%= f.text_field :website, :value => "http://"%>
+    <%= f.text_field :website %>
+  </div>
+  <div class="row">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
   </div>
   <div class="row">
     <%= f.label :company %><br />
@@ -39,6 +43,6 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="row">
-  <div class="actions"><%= f.submit "Edit", class: "button" %></div>
+  <div class="actions"><%= f.submit "Submit", class: "button" %></div>
   </div>
 <% end %>

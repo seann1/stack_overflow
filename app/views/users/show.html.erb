@@ -20,6 +20,26 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="medium-4 medium-offset-8 columns">
+    <% if @user.company == nil %>
+      <%= link_to "Add your company", edit_user_path(@user), class: "company" %>
+    <% else %>
+      <p class="company"><%= @user.company %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-4 medium-offset-8 columns">
+    <% if @user.location == nil %>
+      <%= link_to "Your location", edit_user_path(@user) %>
+    <% else %>
+      <p><%= @user.location %></p>
+    <% end %>
+  </div>
+</div>
+
 <h4>Questions asked: <%= @user.questions.count %></h4>
 
 <% topQuestions = [] %>
