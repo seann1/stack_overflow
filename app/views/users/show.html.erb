@@ -65,6 +65,12 @@
   <h4>Top Questions</h4>
 </div>
 
+<% if @user.questions.count == 0 %>
+  <div class="row">
+    <p><%= @user.username %> has not asked any questions</p>
+  </div>
+<% end %>
+
 
 <%-# Displaying questions in order from most answers to least -%>
 <% sortedQuestions.each do |q| %>
@@ -90,4 +96,9 @@
 
 <div class="row">
   <h4>Top Answers</h4>
+  <% if @user.answers.count == 0 %>
+    <div class="row">
+      <p><%= @user.username %> has not answered any questions</p>
+    </div>
+  <% end %>
 </div>
