@@ -1,18 +1,33 @@
 <div class="row">
   <div class="medium-8 columns">
     <h3><%= @question.title %></h3>
-  </div>
-  <div class="medium-4 columns">
-    <p class="answer-count-text">Asked on <%= @question.created_at.to_s[5..9] %>-<%= @question.created_at.to_s[0..3] %></p>
-    <p class="answer-count-text">By <%= link_to "#{@question.user.username}", user_path(@question.user_id) %></p>
-    <p class="answer-count-text"><%= link_to  "#{@question.answers.count} answers", question_path(@question) %></p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="title">
-    <p class='description'><%= @question.description %></p>
+    <div class="title">
+      <p class='description'><%= @question.description %></p>
+    </div>
+
   </div>
+
+  <div class="medium-4 columns">
+    <div class="row">
+      <div class="image-container">
+        <%= image_tag current_user.avatar.url(:thumb), class: "question-photo" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="answer-count-text"> <%= link_to "#{@question.user.username}", user_path(@question.user_id) %></p>
+    </div>
+
+    <div class="row">
+      <p class="answer-count-text">Asked on <%= @question.created_at.to_s[5..9] %>-<%= @question.created_at.to_s[0..3] %></p>
+    </div>
+
+    <div class="row">
+      <p class="answer-count-text"><%= link_to  "#{@question.answers.count} answers", question_path(@question) %></p>
+    </div>
+  </div>
+
 </div>
 
 

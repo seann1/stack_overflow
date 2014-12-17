@@ -23,7 +23,7 @@ body {
 .description {
   background: #D3D3D3;
   padding: 5px;
-  font-size: 0.8em;
+  font-size: 1em;
   border-radius: 3px;
   border-width: 1px;
   border-style: solid;
@@ -135,4 +135,15 @@ body {
 
 .answers {
   float: left !important;
+}
+
+.image-container {
+    width: 70px;
+    height: 70px;
+}
+
+/* resize images */
+.question-photo {
+    width: 100%;
+    height: auto;
 }
