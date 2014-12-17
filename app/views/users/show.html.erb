@@ -61,8 +61,12 @@
 
 <% sortedQuestions = topQuestions.sort! { |a,b| b[1] <=> a[1] } %>
 
-<h4>Top Questions</h4>
+<div class="row">
+  <h4>Top Questions</h4>
+</div>
 
+
+<%-# Displaying questions in order from most answers to least -%>
 <% sortedQuestions.each do |q| %>
 <div class="row">
   <div class="medium-10 columns">
@@ -82,4 +86,8 @@
       <p class="answer-count-text">By <%= link_to @user.username, user_path(@user) %></p>
     </div>
   </div>
-      <% end %>
+<% end %>
+
+<div class="row">
+  <h4>Top Answers</h4>
+</div>

@@ -1,29 +1,28 @@
 <div class="row">
   <h3 class="center"><%= @question.title %></h3>
-</div>
-<div class="row">
-<div class="small-4 columns buttons">
-<% if current_user != nil %>
-  <% if @question.user_id == current_user.id %>
-  <ul class="button-group">
-    <li><%= link_to 'Edit', edit_question_path(@question), class: 'button', id: "edit_link" %></li>
-    <li><%= link_to "Delete", question_path(@question), class: 'button',
-                        :data => {:confirm => "You sure?",
-                        :method => "delete"} %></li>
-                      </ul>
-  <% end %>
-<% end %>
-</div>
 
   <div class="title">
     <p class='description'><%= @question.description %></p>
   </div>
 </div>
-  <hr>
+
+
 <div class="row">
-  <div id="answers">
-    <%= render @answers %>
+  <div class="medium-4 columns buttons">
+    <% if current_user != nil %>
+      <% if @question.user_id == current_user.id %>
+        <ul class="button-group">
+          <li><%= link_to 'Edit', edit_question_path(@question), class: 'button', id: "edit_link" %></li>
+          <li><%= link_to "Delete", question_path(@question), class: 'button', :data => {:confirm => "You sure?", :method => "delete"} %></li>
+        </ul>
+      <% end %>
+    <% end %>
   </div>
+</div>
+
+  <hr>
+<div class="row" id="answers">
+    <%= render @answers %>
 </div>
 
 
@@ -31,6 +30,7 @@
   <% if current_user == nil %>
     <p>Log in to answer.</p>
   <% elsif current_user.id != @question.user_id %>
-  <%= link_to 'Answer Question', new_question_answer_path(@question), class: "button", id: "answer_link", remote: true %>
+    <%-# answer question link -%>
+    <%= link_to 'Answer Question', new_question_answer_path(@question), class: "button", id: "answer_link", remote: true %>
   <% end %>
 </div>
