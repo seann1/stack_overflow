@@ -41,11 +41,11 @@
 </div>
 
 <div class="row">
-  <div class="small-3 columns">
+  <div class="small-4 columns">
     <h4>Questions asked: <%= @user.questions.count %></h4>
   </div>
 
-  <div class="small-3 columns">
+  <div class="small-4 columns answers">
     <h4>Questions answered: <%= @user.answers.count %></h4>
   </div>
 </div>
@@ -65,16 +65,21 @@
 
 <% sortedQuestions.each do |q| %>
 <div class="row">
-  <h4 class="question_list medium-10 columns"><%= link_to Question.find_by_id(q[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
+  <div class="medium-10 columns">
+    <h4 class="question_list"><%= link_to Question.find_by_id(q[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
+  </div>
   <div class="answer-count medium-2 columns">
-    <% if q[1] < 2 %>
+
+    <%-# finding whether or not question has one answer -%>
+
+    <% if q[1] == 1 %>
       <p class="answer-count-text"><%= link_to "#{q[1]} Answer", question_path(q[0]) %></p>
     <% else %>
       <p class="answer-count-text"><%= link_to "#{q[1]} Answers", question_path(q[0]) %></p>
     <% end %>
+
+      <p class="answer-count-text">Asked on <%= Question.find_by_id(q[0]).created_at.to_s[5..9] %>-<%= Question.find_by_id(q[0]).created_at.to_s[0..3] %></p>
+      <p class="answer-count-text">By <%= link_to @user.username, user_path(@user) %></p>
+    </div>
   </div>
-</div>
-<% end %>
-
-<h4>Answers: <%= @user.answers.count %></h4>
-
+      <% end %>
