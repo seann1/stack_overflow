@@ -1,28 +1,29 @@
-<% usersArray = User.all.sample(5) %>
+<% if current_user != nil %>
+  <% usersArray = User.all.sample(5) %>
+  <% if usersArray.length > 4 %>
+    <div class="row">
+      <div class="medium-4 columns">
+        <div class="row">
+          <div class="user-list">
+            <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(usersArray[0]) %>
+          </div>
+          <div class="user-list">
+            <%= link_to image_tag(usersArray[1].avatar.url(:thumb), class: "nav-thumb"), user_path(usersArray[1]) %>
+          </div>
+          <div class="user-list">
+            <%= link_to image_tag(usersArray[2].avatar.url(:thumb), class: "nav-thumb"), user_path(usersArray[2]) %>
+          </div>
+          <div class="user-list">
+            <%= link_to image_tag(usersArray[3].avatar.url(:thumb), class: "nav-thumb"), user_path(usersArray[3]) %>
+          </div>
+          <div class="user-list">
+            <%= link_to image_tag(usersArray[4].avatar.url(:thumb), class: "nav-thumb"), user_path(usersArray[4]) %>
+          </div>
 
-<% if usersArray.length > 4 %>
-  <div class="row">
-    <div class="medium-4 columns">
-      <div class="row">
-        <div class="user-list">
-          <%= link_to image_tag(usersArray[0].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
         </div>
-        <div class="user-list">
-          <%= link_to image_tag(usersArray[1].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-        </div>
-        <div class="user-list">
-          <%= link_to image_tag(usersArray[2].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-        </div>
-        <div class="user-list">
-          <%= link_to image_tag(usersArray[3].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-        </div>
-        <div class="user-list">
-          <%= link_to image_tag(usersArray[4].avatar.url(:thumb), class: "nav-thumb"), user_path(current_user) %>
-        </div>
-
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
     <% if current_user == nil %>
