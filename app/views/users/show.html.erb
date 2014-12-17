@@ -6,16 +6,16 @@
 
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
-<%= image_tag current_user.avatar.url(:medium), class: "nav-profile" %>
+    <%= image_tag current_user.avatar.url(:medium), class: "nav-profile" %>
   </div>
 </div>
 
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.website == nil %>
-    <p><%= link_to "Add a website", edit_user_path(@user), class: "profile-contact" %></p>
+    <p class="profile-contact"><%= link_to "Add a website", edit_user_path(@user)%></p>
     <% else %>
-    <p><%= link_to @user.website, @user.website, target: "_blank", class: "profile-contact" %></p>
+    <p class="profile-contact"><%= link_to @user.website, @user.website, target: "_blank"%></p>
     <% end %>
   </div>
 </div>
@@ -23,7 +23,7 @@
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.company == nil %>
-      <p><%= link_to "Add your company", edit_user_path(@user), class: "profile-contact" %></p>
+      <p class="profile-contact"><%= link_to "Add your company", edit_user_path(@user) %></p>
     <% else %>
       <p class="profile-contact"><%= @user.company %></p>
     <% end %>
@@ -33,14 +33,23 @@
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.location == nil %>
-      <p><%= link_to "Your location", edit_user_path(@user), class: "profile-contact" %></p>
+      <p class="profile-contact"><%= link_to "Your location", edit_user_path(@user) %></p>
     <% else %>
       <p class="profile-contact"><%= @user.location %></p>
     <% end %>
   </div>
 </div>
 
-<h4>Questions asked: <%= @user.questions.count %></h4>
+<div class="row">
+  <div class="small-3 columns">
+    <h4>Questions asked: <%= @user.questions.count %></h4>
+  </div>
+
+  <div class="small-3 columns">
+    <h4>Questions answered: <%= @user.answers.count %></h4>
+  </div>
+</div>
+<hr>
 
 <% topQuestions = [] %>
 
@@ -50,7 +59,7 @@
   <% topQuestions << current_q %>
 <% end %>
 
-<% sortedQuestions = topQuestions.sort! { |a,b| a[1] <=> b[1] } %>
+<% sortedQuestions = topQuestions.sort! { |a,b| b[1] <=> a[1] } %>
 
 <h4>Top Questions</h4>
 
