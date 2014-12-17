@@ -12,17 +12,17 @@
 
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
-    <% if @user.website == nil %>
-    <p class="profile-contact"><%= link_to "Add a website", edit_user_path(@user)%></p>
+    <% if @user.website == nil || @user.website.blank? %>
+      <p class="profile-contact"><%= link_to "Add a website", edit_user_path(@user)%></p>
     <% else %>
-    <p class="profile-contact"><%= link_to @user.website, @user.website, target: "_blank"%></p>
+      <p class="profile-contact"><%= link_to @user.website, @user.website, target: "_blank"%></p>
     <% end %>
   </div>
 </div>
 
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
-    <% if @user.company == nil %>
+    <% if @user.company == nil || @user.company.blank? %>
       <p class="profile-contact"><%= link_to "Add your company", edit_user_path(@user) %></p>
     <% else %>
       <p class="profile-contact"><%= @user.company %></p>
@@ -32,7 +32,7 @@
 
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
-    <% if @user.location == nil %>
+    <% if @user.location == nil || @user.location.blank? %>
       <p class="profile-contact"><%= link_to "Your location", edit_user_path(@user) %></p>
     <% else %>
       <p class="profile-contact"><%= @user.location %></p>
