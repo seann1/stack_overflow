@@ -13,7 +13,9 @@
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.website == nil || @user.website.blank? || @user.website == "http://" || @user.website == "https://" %>
-      <p class="profile-contact"><%= link_to "Add a website", edit_user_path(@user)%></p>
+      <% if @user == current_user %>
+        <p class="profile-contact"><%= link_to "Add a website", edit_user_path(@user)%></p>
+      <% end %>
     <% else %>
       <p class="profile-contact"><%= link_to @user.website, @user.website, target: "_blank"%></p>
     <% end %>
@@ -23,7 +25,9 @@
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.company == nil || @user.company.blank? %>
-      <p class="profile-contact"><%= link_to "Add your company", edit_user_path(@user) %></p>
+      <% if @user == current_user %>
+        <p class="profile-contact"><%= link_to "Add your company", edit_user_path(@user) %></p>
+      <% end %>
     <% else %>
       <p class="profile-contact"><%= @user.company %></p>
     <% end %>
@@ -33,7 +37,9 @@
 <div class="row">
   <div class="medium-4 medium-offset-8 columns">
     <% if @user.location == nil || @user.location.blank? %>
-      <p class="profile-contact"><%= link_to "Your location", edit_user_path(@user) %></p>
+      <% if @user == current_user %>
+        <p class="profile-contact"><%= link_to "Your location", edit_user_path(@user) %></p>
+      <% end %>
     <% else %>
       <p class="profile-contact"><%= @user.location %></p>
     <% end %>

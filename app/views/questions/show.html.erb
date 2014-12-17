@@ -11,7 +11,7 @@
   <div class="medium-4 columns">
     <div class="row">
       <div class="image-container">
-        <%= image_tag current_user.avatar.url(:thumb), class: "question-photo" %>
+        <%= image_tag User.find(@question.user_id).avatar.url(:thumb), class: "question-photo" %>
       </div>
     </div>
 
