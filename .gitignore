@@ -16,7 +16,4 @@
 /tmp
 
 # Ignore these
-/config/environments/production.rb
-/config/environments/development.rb
-/config/initializers/s3_direct_upload.rb
 /.env
