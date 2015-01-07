@@ -6,6 +6,11 @@
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  background-color: #918b8b;
+}
+
+a {
+  color: #59ad00;
 }
 
 .hidden {
@@ -52,6 +57,7 @@ body {
     padding-bottom: 6px;
     margin-top: 5px;
     margin-bottom: 3px;
+    background-color: #ffbf00; 
 
   }
 }
@@ -146,4 +152,23 @@ body {
 .question-photo {
     width: 100%;
     height: auto;
+}
+
+.qasked, .qanswered, .username-title {
+  padding: 15px;
+  background-color: #ffe500;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #5b5a5a;
+}
+
+
+.button-submit {
+  background-color: #ffbf00;
+  box-shadow: 5px 5px 5px #5b5a5a;
+  color: black;
+}
+
+.button-submit:hover {
+  background-color: #e20d0d;
+  color: black;
 }

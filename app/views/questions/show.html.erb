@@ -55,6 +55,6 @@
     <p>Log in to answer.</p>
   <% elsif current_user.id != @question.user_id %>
     <%-# answer question link -%>
-    <%= link_to 'Answer Question', new_question_answer_path(@question), class: "button", id: "answer_link", remote: true %>
+    <%= link_to 'Answer Question', new_question_answer_path(@question), class: "button button-submit", id: "answer_link", remote: true %>
   <% end %>
 </div>
