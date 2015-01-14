@@ -35,7 +35,7 @@
   </div>
 
 
-<% elsif answer.votes.where(:user_id => current_user) == nil %>
+    <% elsif answer.votes.where(:user_id => current_user.id) == nil %>
 
   <!-- if user hasn't voted upvote button is shown -->
 

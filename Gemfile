@@ -16,6 +16,7 @@ gem 'aws-sdk'
 gem "chronic", "0.10.2"
 gem "devise"
 gem "validate_url"
+gem 'rails-erb-check'
 
 group :development do
   gem 'better_errors'
