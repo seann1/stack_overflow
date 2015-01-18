@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141216034905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: true do |t|
+  create_table "answers", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "question_id"
     t.string   "description"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141216034905) do
     t.boolean  "user_choice", default: false
   end
 
-  create_table "questions", force: true do |t|
+  create_table "questions", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "description"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20141216034905) do
     t.string   "title"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20141216034905) do
     t.string   "location"
   end
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "answer_id"
     t.datetime "created_at"

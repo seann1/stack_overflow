@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
   database: stackoverflow_clone_development
-  host: /tmp
+  host: localhost
 
 test:
   adapter: postgresql
   database: stackoverflow_clone_test
-  host: /tmp
+  host: localhost
