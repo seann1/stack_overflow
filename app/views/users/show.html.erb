@@ -133,7 +133,7 @@
       <p class="answer-count-text"><%= link_to "#{a[1]} Answers", question_path(a[0]) %></p>
     <% end %>
 
-      <p class="answer-count-text">Asked on <%= Question.find_by_id(a[0].question_id).created_at.to_s[5..9] %>-<%= Question.find_by_id(a[0].question_id).created_at.to_s[0..3] %></p>
+      <p class="answer-count-text">Asked on <%= Question.find_by_id(a[0]).created_at.to_s[5..9] %>-<%= Question.find_by_id(a[0]).created_at.to_s[0..3] %></p>
       <p class="answer-count-text">By <%= link_to @user.username, user_path(@user) %></p>
     </div>
       </div>
