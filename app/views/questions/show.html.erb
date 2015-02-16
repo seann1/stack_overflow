@@ -35,18 +35,19 @@
 </div>
 
 
-<div class="row">
-  <div class="medium-4 columns buttons">
-    <% if current_user != nil %>
-      <% if @question.user_id == current_user.id %>
+
+<% if current_user != nil %>
+  <% if @question.user_id == current_user.id %>
+    <div class="row">
+      <div class="medium-4 columns buttons">
         <ul class="button-group">
           <li><%= link_to 'Edit', edit_question_path(@question), class: 'button', id: "edit_link" %></li>
           <li><%= link_to "Delete", question_path(@question), class: 'button', :data => {:confirm => "You sure?", :method => "delete"} %></li>
         </ul>
+      </div>
+    </div>
       <% end %>
     <% end %>
-  </div>
-</div>
 
   <hr>
 <div class="row" id="answers">
