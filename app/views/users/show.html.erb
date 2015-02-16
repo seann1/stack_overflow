@@ -128,10 +128,10 @@
 
     <%-# finding whether or not question has one answer -%>
 
-    <% if a[1] == 1 %>
-      <p class="answer-count-text"><%= link_to "#{a[1]} Answer", question_path(a[0]) %></p>
+    <% if Question.find_by_id(a[0]).answers.count == 1 %>
+      <p class="answer-count-text"><%= link_to "1 Answer", question_path(a[0]) %></p>
     <% else %>
-      <p class="answer-count-text"><%= link_to "#{a[1]} Answers", question_path(a[0]) %></p>
+      <p class="answer-count-text"><%= link_to "#{Question.find_by_id(a[0]).answers.count} Answers", question_path(a[0]) %></p>
     <% end %>
 
       <p class="answer-count-text">Asked on <%= Question.find_by_id(a[0]).created_at.to_s[5..9] %>-<%= Question.find_by_id(a[0]).created_at.to_s[0..3] %></p>
