@@ -98,6 +98,8 @@
   </div>
 <% end %>
 
+<%-# end of listing questions -%>
+
 <div class="row">
   <h4><%= @user.username %> has the top answers to these questions:</h4>
   <% if @user.answers.count == 0 %>
@@ -118,17 +120,17 @@
     <% sortedAnswers.each do |a| %>
       <div class="row">
         <div class="medium-10 columns">
-          <h4 class="question_list"><%= link_to Question.find_by_id(a[0]).title, question_path(Question.find_by_id(q[0])) %></h4>
+          <h4 class="question_list"><%= link_to Question.find_by_id(a[0]).title, question_path(Question.find_by_id(a[0])) %></h4>
         </div>
 
   <div class="answer-count medium-2 columns">
 
     <%-# finding whether or not question has one answer -%>
 
-    <% if q[1] == 1 %>
-      <p class="answer-count-text"><%= link_to "#{q[1]} Answer", question_path(q[0]) %></p>
+    <% if a[1] == 1 %>
+      <p class="answer-count-text"><%= link_to "#{a[1]} Answer", question_path(a[0]) %></p>
     <% else %>
-      <p class="answer-count-text"><%= link_to "#{q[1]} Answers", question_path(q[0]) %></p>
+      <p class="answer-count-text"><%= link_to "#{a[1]} Answers", question_path(a[0]) %></p>
     <% end %>
 
       <p class="answer-count-text">Asked on <%= Question.find_by_id(a[0].question_id).created_at.to_s[5..9] %>-<%= Question.find_by_id(a[0].question_id).created_at.to_s[0..3] %></p>
