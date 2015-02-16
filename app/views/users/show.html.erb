@@ -102,6 +102,7 @@
 
 <div class="row">
   <h4><%= @user.username %> has the top answers to these questions:</h4>
+</div>
   <% if @user.answers.count == 0 %>
     <div class="row">
       <p><%= @user.username %> has not answered any questions</p>
@@ -136,7 +137,7 @@
       <p class="answer-count-text">Asked on <%= Question.find_by_id(a[0]).created_at.to_s[5..9] %>-<%= Question.find_by_id(a[0]).created_at.to_s[0..3] %></p>
       <p class="answer-count-text">By <%= link_to @user.username, user_path(@user) %></p>
     </div>
-      </div>
+  </div>
 
   <% end %>
 </div>
