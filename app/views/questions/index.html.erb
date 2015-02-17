@@ -26,12 +26,11 @@
   <% end %>
 <% end %>
 
-    <% if current_user == nil %>
+  <% if current_user == nil %>
     <div class="row">
-      <p>log in with test1@test.com</p>
-      <p>Password: password </p>
+      <p class="logged-out">log in with test1@test.com</p>
+      <p class="logged-out">Password: password </p>
     </div>
-    <% end %>
 
     <div class="row">
     <h2><%= @questions.count %> Questions</h2>
@@ -60,6 +59,7 @@
         </div>
       </div>
   </div>
+<% end %>
 
 
 
