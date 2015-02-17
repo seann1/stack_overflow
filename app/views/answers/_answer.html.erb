@@ -29,13 +29,13 @@
   <div class="row" id="answer_row_<%= answer.id %>">
 
 
-<% if answer.votes.where(:user_id => current_user.id) != nil %>
+<% if answer.votes.where(:user_id => current_user.id).count != 0 %>
   <div class="medium-2 columns">
 
   </div>
 
 
-    <% elsif answer.votes.where(:user_id => current_user.id) == nil %>
+    <% elsif answer.votes.where(:user_id => current_user.id).count == 0 %>
 
   <!-- if user hasn't voted upvote button is shown -->
 
