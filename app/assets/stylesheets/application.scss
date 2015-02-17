@@ -13,6 +13,10 @@ a {
   color: #59ad00;
 }
 
+a:hover {
+  color: #557c01;
+}
+
 .hidden {
   display: none;
 }
@@ -188,10 +192,19 @@ a {
   color: black;
 }
 
+.logged-out-small {
+  font-size: 50px;
+  font-weight: bold;
+  color: #0fc4a3;
+  background-color: #65ad00;
+  text-align: center;
+}
+
 .logged-out {
   font-size: 80px;
   font-weight: bold;
   color: #0fc4a3;
+  background-color: #65ad00;
   text-align: center;
 }
 
